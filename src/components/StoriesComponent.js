@@ -23,15 +23,15 @@ import FastImage from 'react-native-fast-image';
 const testusers = [
   {
     image: Testuser1,
-    username: '조유리',
+    username: 'jo_glass',
   },
   {
     image: Testuser2,
-    username: '슬기',
+    username: 'seulgi',
   },
   {
     image: Testuser3,
-    username: '예나',
+    username: 'yenaaa',
   },
   {
     image: Testuser4,

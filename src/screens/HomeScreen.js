@@ -3,10 +3,51 @@ import ButtonWithIcons from '../components/ButtonWithIcons';
 import {ScrollView, View, RefreshControl, StyleSheet} from 'react-native';
 import StoriesComponent from '../components/StoriesComponent';
 import BoardComponent from '../components/BoardComponent';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import {Jo, Test1, Test2, Test3} from '../assets/icons';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
 };
+
+const Posts = [
+  {
+    id: 1,
+    user: 'jo_glass',
+    profile_picture: Jo,
+    lieks: 7870,
+    caption: '너무 예쁜 풍경들. 그리고 나.',
+    imageUrl: Test1,
+    comments: [
+      {
+        user: 'seulgi',
+        comment: '정말 멋지다.@@@@@@',
+      },
+      {
+        user: 'yenaaa',
+        comment: 'lovely!😍😍😍😍',
+      },
+    ],
+  },
+  {
+    id: 1,
+    user: 'jo_glass',
+    profile_picture: Jo,
+    lieks: 7870,
+    caption: '너무 예쁜 풍경들. 그리고 나.',
+    imageUrl: Test3,
+    comments: [
+      {
+        user: 'seulgi',
+        comment: '정말 멋지다.',
+      },
+      {
+        user: 'yenaaa',
+        comment: 'lovely!',
+      },
+    ],
+  },
+];
 
 function HomeScreen() {
   const [refreshing, setRefreshing] = React.useState(false);
@@ -22,16 +63,16 @@ function HomeScreen() {
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }>
-        <View style={{flex: 1}}>
+        <View style={{backgroundColor: 'red'}}>
           {/* 친구 스토리 게시 */}
           <View style={styles.stories}>
             <StoriesComponent />
           </View>
-          {/* 게시글 목록 */}
-          <View style={styles.boards}>
-            <BoardComponent />
-          </View>
         </View>
+        {/* 게시글 목록 */}
+        {Posts.map((post, index) => (
+          <BoardComponent post={post} key={index} />
+        ))}
       </ScrollView>
     </View>
   );
@@ -42,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   stories: {
-    flex: 1,
+    flex: 2,
     backgroundColor: 'white',
     borderBottomWidth: 0.5,
   },
