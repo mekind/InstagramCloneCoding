@@ -4,7 +4,7 @@ import {ScrollView, View, RefreshControl, StyleSheet} from 'react-native';
 import StoriesComponent from '../components/StoriesComponent';
 import BoardComponent from '../components/BoardComponent';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {Jo, Test1, Test2, Test3} from '../assets/icons';
+import {Jo, Test1, Test2, Test3, Testuser3} from '../assets/icons';
 
 const wait = timeout => {
   return new Promise(resolve => setTimeout(resolve, timeout));
@@ -30,7 +30,7 @@ const Posts = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     user: 'jo_glass',
     profile_picture: Jo,
     lieks: 7870,
@@ -44,6 +44,24 @@ const Posts = [
       {
         user: 'yenaaa',
         comment: 'lovely!',
+      },
+    ],
+  },
+  {
+    id: 3,
+    user: 'yeeena',
+    profile_picture: Testuser3,
+    lieks: 7870,
+    caption: '너무 예쁜 풍경들. 그리고 나.',
+    imageUrl: Test2,
+    comments: [
+      {
+        user: 'seulgi',
+        comment: '정말 멋지다.@@@@@@',
+      },
+      {
+        user: 'yenaaa',
+        comment: 'lovely!😍😍😍😍',
       },
     ],
   },
@@ -85,7 +103,7 @@ const styles = StyleSheet.create({
   stories: {
     flex: 2,
     backgroundColor: 'white',
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 0.2,
   },
   boards: {
     flex: 1,

@@ -72,7 +72,7 @@ const StoriesComponent = () => (
           style={styles.image}
           resizeMode="cover"
         />
-        <Text style={{alignSelf: 'center', marginTop: 0, marginBottom: 4}}>
+        <Text style={{alignSelf: 'center', marginTop: 0, marginBottom: 7}}>
           {story.username.length > 11
             ? story.username.slice(0, 10) + '...'
             : story.username}
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   container: {
     height: 100,
     backgroundColor: 'white',
-    borderBottomWidth: 0.5,
+    borderBottomWidth: 0.1,
   },
   storiescontent: {
     backgroundColor: 'white',

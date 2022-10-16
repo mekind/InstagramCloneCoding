@@ -18,7 +18,7 @@ import ButtonWithIcons from './ButtonWithIcons';
 const BoardComponent = ({post}) => {
   return (
     <View style={styles.container}>
-      <Divider width={1} orientation="vertical" />
+      {/* <Divider width={1} orientation="vertical" /> */}
       <PostHeader post={post} />
       <PostImage post={post} />
       <PostFooter post={post} />
@@ -31,8 +31,10 @@ const PostHeader = ({post}) => (
     style={{
       flexDirection: 'row',
       justifyContent: 'space-between',
-      margin: 5,
+      padding: 5,
       alignItems: 'center',
+      backgroundColor: 'white',
+      borderBottomColor: 'white',
     }}>
     <View style={{flexDirection: 'row', alignItems: 'center'}}>
       <FastImage source={post.profile_picture} style={styles.stories} />
@@ -52,7 +54,7 @@ const PostImage = ({post}) => (
 );
 
 const PostFooter = ({post}) => (
-  <View>
+  <View style={{backgroundColor: 'white'}}>
     <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
       <View style={{flexDirection: 'row'}}>
         <FastImage source={LikeIcons} style={styles.image} />
