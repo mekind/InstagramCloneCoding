@@ -2,17 +2,27 @@ import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {View, StyleSheet, TouchableWithoutFeedback, Alert} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {AddIcon, DefaultProfile, LikeIcons, PlaneIcon} from '../assets/icons';
+import {SearchBar} from 'react-native-screens';
+import {
+  AddIcon,
+  DefaultProfile,
+  HomeIcon,
+  LikeIcons,
+  PlaneIcon,
+  ReelsIcon,
+  SearchIcon,
+  ShopIcon,
+} from '../assets/icons';
 
 const ButtonWithIcons = props => {
   const ImageName = props.name;
   const navigation = useNavigation();
   const handleClick = () => {
-    navigation.navigate('AddBoard');
-    Alert.alert('not ready');
+    // console.log(ImageName);
+    navigation.navigate(`${ImageName}`);
   };
 
-  const getUri = IamgeName => {
+  const getUri = ImageName => {
     switch (ImageName) {
       case 'AddBoard':
         return AddIcon;
@@ -22,6 +32,16 @@ const ButtonWithIcons = props => {
         return PlaneIcon;
       case 'DefaultProfile':
         return DefaultProfile;
+      case 'Home':
+        return HomeIcon;
+      case 'Search':
+        return SearchIcon;
+      case 'Reels':
+        return ReelsIcon;
+      case 'Shop':
+        return ShopIcon;
+      case 'Profile':
+        return DefaultProfile;
       default:
         return AddIcon;
     }
@@ -29,8 +49,14 @@ const ButtonWithIcons = props => {
 
   const getStyle = ImageName => {
     switch (ImageName) {
-      case 'Plane':
-        return styles.lastimage;
+      // case 'Plane':
+      //   return styles.lastimage;
+      case 'Home':
+      case 'Search':
+      case 'Reels':
+      case 'Shop':
+      case 'Profile':
+        return styles.bottom;
       case 'DefaultProfile':
         return styles.user;
       default:
@@ -58,8 +84,7 @@ const styles = StyleSheet.create({
     height: 50,
     marginLeft: 5,
     marginRight: 10,
-    marginTop: 10,
-    marginBottom: 10,
+    alignSelf: 'center',
   },
   image: {
     marginRight: 20,
@@ -83,6 +108,15 @@ const styles = StyleSheet.create({
     height: 5,
     borderRadius: 100,
     backgroundColor: 'red',
+  },
+  bottom: {
+    marginLeft: 15,
+    marginRight: 35,
+    // padding: 15,
+    alignSelf: 'center',
+    width: 30,
+    height: 30,
+    // backgroundColor: 'green',
   },
 });
 
