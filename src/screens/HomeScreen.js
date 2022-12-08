@@ -67,7 +67,7 @@ const Posts = [
   },
 ];
 
-function HomeScreen() {
+const HomeScreen = ({}) => {
   const [refreshing, setRefreshing] = React.useState(false);
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);

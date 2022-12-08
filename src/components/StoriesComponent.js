@@ -6,7 +6,7 @@ import {
   View,
   Text,
 } from 'react-native';
-import ProfileComponent from './ProfileComponent';
+// import ProfileComponent from './ProfileComponent';
 import {
   Jo,
   Test1,
@@ -64,19 +64,30 @@ const StoriesComponent = () => (
     horizontal
     showsHorizontalScrollIndicator={false}
     name="stories"
-    contentContainerStyle={styles.storiescontent}>
+    contentContainerStyle={styles.storiescontent}
+  >
     {testusers.map((story, index) => (
-      <View style={{alginItems: 'center'}}>
-        <FastImage
-          source={story.image}
-          style={styles.image}
-          resizeMode="cover"
-        />
-        <Text style={{alignSelf: 'center', marginTop: 0, marginBottom: 7}}>
+      <View style={{ alginItems: 'flex-start', justifyContent: 'center' }}>
+        <View
+          style={{
+            borderRadius: 999,
+            borderWidth: 3,
+            borderColor: 'red',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <FastImage
+            source={story.image}
+            style={styles.image}
+            resizeMode="cover"
+          />
+        </View>
+        {/* <Text style={{ alignSelf: 'center', marginTop: 0, marginBottom: 7 }}>
           {story.username.length > 11
             ? story.username.slice(0, 10) + '...'
             : story.username}
-        </Text>
+        </Text> */}
       </View>
     ))}
   </ScrollView>
@@ -98,11 +109,8 @@ const styles = StyleSheet.create({
     height: 70,
     borderRadius: 35,
     overflow: 'hidden',
-    padding: 30,
-    margin: 5,
-    marginBottom: 1,
     borderWidth: 3,
-    borderColor: 'orange',
+    borderColor: 'white',
   },
   story: {},
 });

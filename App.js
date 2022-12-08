@@ -9,10 +9,10 @@ import {
   ScrollView,
   SafeAreaView,
 } from 'react-native';
-import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ButtonWithIcons from './src/components/ButtonWithIcons';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 // Screens
 import HomeScreen from './src/screens/HomeScreen';
@@ -21,7 +21,7 @@ import ReelsScreen from './src/screens/ReelsScreen';
 import ShopScreen from './src/screens/ShopScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+// import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const Stack = createBottomTabNavigator();
 
@@ -54,7 +54,7 @@ const App = () => {
           options={{
             // headerStyle: {{styles.header}},
             title: '',
-            tabBarButton: () => <ButtonWithIcons name="Search" />,
+            tabBarButton: () => <ButtonWithIcons name="Search" />
           }}
         />
         <Stack.Screen
